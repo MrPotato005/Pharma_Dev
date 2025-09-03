@@ -8,8 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ProduccionInsumosRepositorio extends JpaRepository<ProduccionInsumos, Integer> {
-
-    List<ProduccionInsumos> findByProductoId(Integer idProductoFinal);
-
-    List<ProduccionInsumos> findByInsumoProductoId(Integer idProductoFinal);
+    List<ProduccionInsumos> findByProduccion_IdProduccion(Integer idProduccion);
+    List<ProduccionInsumos> findByInsumoProductoIdProducto(Integer idInsumoProducto);
 }

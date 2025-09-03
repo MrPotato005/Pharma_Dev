@@ -49,4 +49,16 @@ public class ProduccionController {
         produccionService.delete(id);
         return ResponseEntity.noContent().build();
     }
+    @PostMapping("/procesar")
+    public ResponseEntity<String> procesarProduccion(
+            @RequestParam Integer idProductoFinal,
+            @RequestParam Integer cantidadProducir) {
+        try {
+            produccionService.procesarProduccion(idProductoFinal, cantidadProducir);
+            return ResponseEntity.ok("Producción realizada con éxito");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
+        }
+    }
+
 }

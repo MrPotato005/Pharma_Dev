@@ -9,3 +9,5 @@ import java.util.Optional;
 public interface BodegaRepositorio extends JpaRepository<Bodega, Integer> {
     Optional<Bodega> findByProducto(Producto insumoProducto);
 }
+
+

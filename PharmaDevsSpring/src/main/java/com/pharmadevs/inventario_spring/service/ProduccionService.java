@@ -13,4 +13,7 @@ public interface ProduccionService {
     public Produccion save(Produccion produccion);
    public  Produccion update(int id, Produccion produccion);
     public void delete(int id);
+    void procesarProduccion(Integer idProductoFinal, Integer cantidadProducir) throws Exception;
+
+
 }

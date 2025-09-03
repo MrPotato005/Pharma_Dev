@@ -25,6 +25,13 @@ public class Bodega {
     @JoinColumn(name = "ID_Proveedor")
     private Proveedor proveedor;
 
+
+    @ManyToOne
+    @JoinColumn(name = "ID_Producto")
+    private Producto producto;
+
+
+
     public Bodega() {
     }
 
@@ -74,6 +81,14 @@ public class Bodega {
 
     public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     @Override

@@ -10,7 +10,7 @@ public class Produccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="ID_Produccion")
-    private int idProduccion;
+    private Integer idProduccion;
 
     @Column(name ="Fecha_Producción")
     private LocalDateTime fechaproduccion;
@@ -45,11 +45,11 @@ public class Produccion {
         this.producto = producto;
     }
 
-    public int getIdProduccion() {
+    public Integer getIdProduccion() {
         return idProduccion;
     }
 
-    public void setIdProduccion(int idProduccion) {
+    public void setIdProduccion(Integer idProduccion) {
         this.idProduccion = idProduccion;
     }
 
