@@ -3,7 +3,6 @@ package com.pharmadevs.inventario_spring.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +44,7 @@ public class Carrito {
 
     // === Lógica de cálculo ===
 
-    public void recomputarTotales(BigDecimal tasaIva) {
+    public void recomputarTotales(Float tasaIva) {
         subtotal = 0f;
 
         for (CarritoItem item : items) {
