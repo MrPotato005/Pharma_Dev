@@ -35,7 +35,7 @@ public class CarritoItem {
     @Column(name = "total")
     private Float total;
 
-    // === Métodos de cálculo ===
+
 
     @PrePersist
     @PreUpdate
@@ -44,8 +44,6 @@ public class CarritoItem {
         int cant = (cantidad != null) ? cantidad : 0;
         total = pu * cant;
     }
-
-    // === Getters y Setters ===
 
     public Long getIdCarritoItem() {
         return idCarritoItem;

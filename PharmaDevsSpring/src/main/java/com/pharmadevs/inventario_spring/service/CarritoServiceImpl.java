@@ -49,16 +49,9 @@ public class CarritoServiceImpl implements CarritoService {
         Carrito carrito = new Carrito();
         carrito.setCliente(cliente);
         carrito.setToken(token != null ? token : UUID.randomUUID().toString());
-        carrito.recomputarTotales(IVA);
+        carrito.recomputarTotales(IVA.floatValue());
         return carritoRepositorio.save(carrito);
     }
-
-
-
-
-
-
-
 
     @Override
     @Transactional
@@ -82,7 +75,7 @@ public class CarritoServiceImpl implements CarritoService {
             carrito.getItems().add(item);
         }
 
-        carrito.recomputarTotales(IVA);
+        carrito.recomputarTotales(IVA.floatValue());
         return carritoRepositorio.save(carrito);
     }
 
@@ -102,7 +95,7 @@ public class CarritoServiceImpl implements CarritoService {
             carritoItemRepositorio.save(item);
         }
 
-        carrito.recomputarTotales(IVA);
+        carrito.recomputarTotales(IVA.floatValue());
         return carritoRepositorio.save(carrito);
     }
 
@@ -180,7 +173,7 @@ public class CarritoServiceImpl implements CarritoService {
             carrito.getItems().add(item);
         }
 
-        carrito.recomputarTotales(IVA);
+        carrito.recomputarTotales(IVA.floatValue());
         return carritoRepositorio.save(carrito);
     }
     @Override
@@ -198,7 +191,7 @@ public class CarritoServiceImpl implements CarritoService {
             carritoItemRepositorio.save(item);
         }
 
-        carrito.recomputarTotales(IVA);
+        carrito.recomputarTotales(IVA.floatValue());
         return carritoRepositorio.save(carrito);
     }
 
