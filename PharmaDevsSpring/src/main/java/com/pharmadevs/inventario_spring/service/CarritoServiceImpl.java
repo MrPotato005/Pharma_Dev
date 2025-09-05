@@ -10,6 +10,7 @@ import com.pharmadevs.inventario_spring.model.CarritoItem;
 import com.pharmadevs.inventario_spring.model.Cliente;
 import com.pharmadevs.inventario_spring.model.Producto;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -135,6 +136,7 @@ public class CarritoServiceImpl implements CarritoService {
     @Override
     @Transactional
     public Carrito getOrCreateByToken(String token) {
+    try {
         if (token == null || token.isEmpty()) token = UUID.randomUUID().toString();
 
         String finalToken = token;
@@ -149,7 +151,11 @@ public class CarritoServiceImpl implements CarritoService {
                     c.setTotal(0f);
                     return carritoRepositorio.save(c);
                 });
+    } catch (Exception e) {
+        e.printStackTrace();
+        throw e;
     }
+}
 
     @Override
     @Transactional
